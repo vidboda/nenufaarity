@@ -127,7 +127,7 @@ Include: yum
 	
 	echo "Installing Platypus..."
 	cd ..
-	rpm -iUvh https://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-10.noarch.rpm
+	rpm -iUvh https://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-11.noarch.rpm
         yum -y install python-pip
         pip install cython
 	git clone https://github.com/andyrimmer/Platypus
