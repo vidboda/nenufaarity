@@ -134,19 +134,16 @@ Include: yum
         cd Platypus/
         make
 	
-	echo "Installing Cava..."
-        cd ..
-	git clone https://github.com/RahmanTeam/CAVA
-        cd CAVA
-        ./install.sh
+#	echo "Installing Cava..."
+#       cd ..
+#	git clone https://github.com/RahmanTeam/CAVA
+#        cd CAVA
+#        ./install.sh
 
 
 %runscript
 
 	echo "try running with -app nenufaar/mnenufaar or singularity help nenufaarity.simg to get help"
-#
-#	echo "Launching Nenufaar in Singularity container"
-#        exec /bin/sh /nenufaar/nenufaar.sh "$@"
 
 ##############################
 # Nenufaar
@@ -198,14 +195,3 @@ Include: yum
 	-on Meta Menufaar:
 	singularity help --app mnenufaar nenufaarity.simg
 
-
-
-
-
-#	-test Nenufaar:
-#	singularity test nenufaarity.simg
-
-#%test
-
-#	/bin/sh /nenufaar/nenufaar.sh -i input/MiniFastqTest/ -hsm true -up false -p wgs &
-#	/bin/sh /nenufaar/mnenufaar.sh -i input/MiniFastqTest_m/ -p capture -cf mnenufaar.conf &
