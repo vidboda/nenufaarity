@@ -145,10 +145,6 @@ Include: yum
 
 	echo "try running with -app nenufaar/mnenufaar or singularity help nenufaarity.simg to get help"
 
-##############################
-# Nenufaar
-##############################
-
 %apprun nenufaar
 
 	echo "Launching Nenufaar in Singularity container"
@@ -165,11 +161,6 @@ Include: yum
 	-get specific help with optons description
 	singularity run --app nenufaar nenufaarity.simg -h
 
-
-##############################
-# Meta Nenufaar
-##############################
-	
 %apprun mnenufaar
 
 	echo "Launching MetaNenufaar in Singularity container"
