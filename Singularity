@@ -103,13 +103,15 @@ Include: yum
 	mkdir software/picard/2.13.2/
 	mkdir software/Queue/
         mkdir software/Queue/3.8.0/
+	mkdir software/qualimap/
+	mkdir software/qualimap/2.2.1/
 	echo "Downloading Picard..."
         wget https://github.com/broadinstitute/picard/releases/download/2.13.2/picard.jar
 	mv picard.jar software/picard/2.13.2/
 	echo "Downloading Queue..."
 	wget -O Queue-3.8-0.tar.bz2 "https://software.broadinstitute.org/gatk/download/auth?package=Queue"
         tar -xjf Queue-3.8-0.tar.bz2 
-	mv ./Queue-3.8-0-ge9d806836/Queue.jar software/Queue/3.8.0/
+	mv Queue.jar software/Queue/3.8.0/
         rm Queue-3.8-0.tar.bz2
 	rm -rf ./Queue-3.8-0-ge9d806836/
 	echo "Downloading GATK.."
@@ -118,6 +120,13 @@ Include: yum
 	mv ./GenomeAnalysisTK-3.8-0-ge9d806836/GenomeAnalysisTK.jar software/GenomeAnalysisTK/3.8.0/
 	rm GenomeAnalysisTK-3.8-0.tar.bz2
 	rm -rf ./GenomeAnalysisTK-3.8-0-ge9d806836/	
+	echo "Downloading qualimap"
+        wget https://bitbucket.org/kokonech/qualimap/downloads/qualimap_v2.2.1.zip
+	unzip qualimap_v2.2.1.zip
+        chmod 755 qualimap_v2.2.1/qualimap
+        mv qualimap_v2.2.1/* software/qualimap/2.2.1/
+        rm qualimap_v2.2.1.zip
+        rm -r qualimap_v2.2.1/
 
 	echo "Installing jvarkit vcfpolyx..."
 	cd software
